@@ -18,5 +18,16 @@
   "bugs": {
     "url": "https://github.com/JhonEsteban/Webpack-React-Boilerplate/issues"
   },
-  "homepage": "https://github.com/JhonEsteban/Webpack-React-Boilerplate#readme"
+  "homepage": "https://github.com/JhonEsteban/Webpack-React-Boilerplate#readme",
+  "devDependencies": {
+    "html-loader": "^2.1.2",
+    "html-webpack-plugin": "^5.3.1",
+    "webpack": "^5.37.0",
+    "webpack-cli": "^4.7.0",
+    "webpack-dev-server": "^3.11.2"
+  },
+  "dependencies": {
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2"
+  }
 }
