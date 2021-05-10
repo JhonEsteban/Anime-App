@@ -1,0 +1,22 @@
+{
+  "name": "webpack-react-boilerplate",
+  "version": "1.0.0",
+  "description": "Custom webpack configuration for React projects",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/JhonEsteban/Webpack-React-Boilerplate.git"
+  },
+  "keywords": [
+    "webpack"
+  ],
+  "author": "Jhon Esteban Herrera <estebanhz9919@gmail.com>",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/JhonEsteban/Webpack-React-Boilerplate/issues"
+  },
+  "homepage": "https://github.com/JhonEsteban/Webpack-React-Boilerplate#readme"
+}
