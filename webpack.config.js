@@ -10,6 +10,12 @@ module.exports = {
   resolve: {
     extensions: ['.js', '.jsx'],
   },
+  devServer: {
+    contentBase: path.join(__dirname, 'build'),
+    open: true,
+    port: 8080,
+    compress: true,
+  },
   module: {
     rules: [
       {
@@ -19,6 +25,13 @@ module.exports = {
             loader: 'html-loader',
           },
         ],
+      },
+      {
+        test: /\.(js|jsx)$/,
+        exclude: /node_modules/,
+        use: {
+          loader: 'babel-loader',
+        },
       },
     ],
   },
