@@ -7,12 +7,14 @@ module.exports = {
   output: {
     filename: 'bundle.js',
     path: path.resolve(__dirname, 'build'),
+    publicPath: '/',
   },
   resolve: {
     extensions: ['.js', '.jsx'],
   },
   devServer: {
     contentBase: path.join(__dirname, 'build'),
+    historyApiFallback: true,
     open: true,
     port: 8080,
     compress: true,
@@ -44,6 +46,10 @@ module.exports = {
           loader: 'babel-loader',
         },
       },
+      {
+        type: 'asset',
+        test: /\.(png|svg|jpg|jpeg|gif)$/i,
+      },
     ],
   },
   plugins: [
@@ -53,7 +59,7 @@ module.exports = {
       template: './public/index.html',
     }),
     new MiniCssExtractPlugin({
-      filename: 'assets/styles/[name].css',
+      filename: '[name].css',
     }),
   ],
 };
