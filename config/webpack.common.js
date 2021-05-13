@@ -7,18 +7,11 @@ module.exports = {
   entry: './src/index.js',
   output: {
     filename: '[name].[contenthash].js',
-    path: path.resolve(__dirname, 'build'),
+    path: path.resolve(__dirname, '../build'),
     publicPath: '/',
   },
   resolve: {
     extensions: ['.js', '.jsx'],
-  },
-  devServer: {
-    contentBase: path.join(__dirname, 'build'),
-    historyApiFallback: true,
-    open: true,
-    port: 8080,
-    compress: true,
   },
   module: {
     rules: [
