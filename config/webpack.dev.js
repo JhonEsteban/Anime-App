@@ -4,6 +4,7 @@ const commonConfig = require('./webpack.common');
 
 const developmentConfig = {
   mode: 'development',
+  devtool: 'eval-source-map',
   devServer: {
     contentBase: path.join(__dirname, '../build'),
     historyApiFallback: true,
