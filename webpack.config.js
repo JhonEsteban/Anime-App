@@ -50,6 +50,16 @@ module.exports = {
       {
         type: 'asset',
         test: /\.(png|svg|jpg|jpeg|gif)$/i,
+        generator: {
+          filename: 'assets/images/[hash][ext]',
+        },
+      },
+      {
+        type: 'asset',
+        test: /\.(ttf|eot|woff|woff2)$/i,
+        generator: {
+          filename: 'assets/fonts/[hash][ext]',
+        },
       },
     ],
   },

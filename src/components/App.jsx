@@ -1,4 +1,4 @@
-import '../assets/styles/App.scss';
+import '../assets/styles/reset.scss';
 import logo from '../assets/images/logo.png';
 
 const App = () => {
