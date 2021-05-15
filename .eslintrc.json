@@ -17,24 +17,6 @@
     "react/react-in-jsx-scope": "off",
     "react/jsx-filename-extension": [1, { "extensions": [".js", ".jsx"] }],
     "no-console": "warn",
-    "import/order": [
-      "error",
-      {
-        "alphabetize": {
-          "order": "asc"
-        },
-        "groups": [
-          "builtin",
-          "external",
-          "internal",
-          "parent",
-          ["sibling", "index"]
-        ],
-        "newlines-between": "always",
-        "pathGroups": [],
-        "pathGroupsExcludedImportTypes": []
-      }
-    ],
     "import/no-extraneous-dependencies": [
       "off",
       {
