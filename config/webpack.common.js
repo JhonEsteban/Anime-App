@@ -59,7 +59,7 @@ module.exports = {
   },
   plugins: [
     new HtmlWebpackPlugin({
-      title: 'Webpack React Boilerplate',
+      title: 'Anime App',
       filename: 'index.html',
       template: './public/index.html',
     }),

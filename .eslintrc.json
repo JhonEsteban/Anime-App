@@ -15,7 +15,10 @@
   "plugins": ["react"],
   "rules": {
     "react/react-in-jsx-scope": "off",
+    "jsx-quotes": ["error", "prefer-single"],
     "react/jsx-filename-extension": [1, { "extensions": [".js", ".jsx"] }],
+    "react/self-closing-comp": "off",
+    "react/prop-types": "off",
     "no-console": "warn",
     "import/no-extraneous-dependencies": [
       "off",
