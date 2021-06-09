@@ -59,7 +59,7 @@ module.exports = {
   },
   plugins: [
     new HtmlWebpackPlugin({
-      title: 'Anime App',
+      title: 'Animes Prime',
       filename: 'index.html',
       template: './public/index.html',
     }),

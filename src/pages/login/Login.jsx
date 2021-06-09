@@ -1,24 +1,32 @@
 import { Link } from 'react-router-dom';
 
+import {
+  Input,
+  LoginForm,
+  ButtonSubmit,
+  LoginContainer,
+} from '../../assets/styles/FormStyles';
+
+import MainLogo from '../../components/mainLogo/MainLogo';
+
 const Login = () => {
   const handleLogin = (e) => {
     e.preventDefault();
   };
 
   return (
-    <form onSubmit={handleLogin}>
-      <h1>Inicio de Sesión</h1>
-      <p>
-        <input name='email' type='email' placeholder='Correo' />
-      </p>
+    <LoginContainer>
+      <LoginForm onSubmit={handleLogin}>
+        <MainLogo />
+        <Input name='email' type='email' placeholder='Correo electrónico' />
 
-      <p>
-        <input name='password' type='password' placeholder='Contraseña' />
-      </p>
+        <Input name='password' type='password' placeholder='Contraseña' />
 
-      <button type='submit'>Iniciar Sesión</button>
-      <Link to='/register'>Crear Cuenta</Link>
-    </form>
+        <ButtonSubmit type='submit'>Iniciar Sesión</ButtonSubmit>
+
+        <Link to='/register'>Crear cuenta</Link>
+      </LoginForm>
+    </LoginContainer>
   );
 };
 
