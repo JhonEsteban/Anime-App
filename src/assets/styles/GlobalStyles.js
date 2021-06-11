@@ -1,6 +1,7 @@
 import { createGlobalStyle } from 'styled-components';
 
 import RobotoLight from '../fonts/Roboto-Light.ttf';
+import RobotoRegular from '../fonts/Roboto-Regular.ttf';
 
 const GlobalStyles = createGlobalStyle`
   *,
@@ -11,12 +12,14 @@ const GlobalStyles = createGlobalStyle`
 
   @font-face {
     font-family: 'RobotoLight';
+    font-weight: 300;
     src: url(${RobotoLight});
   }
 
   @font-face {
-    font-family: 'RobotoBold';
-    src: url(${RobotoLight});
+    font-family: 'RobotoRegular';
+    font-weight: 400;
+    src: url(${RobotoRegular});
   }
 
   html {
@@ -36,15 +39,16 @@ const GlobalStyles = createGlobalStyle`
 
   a {
     color: #fff;
-    text-decoration: none;
 
     &:hover {
-    text-decoration: underline;
       color: #fffc;
     }
   }
 
- 
+ button {
+  font-family: RobotoRegular, Arial, Helvetica;
+ }
+
 `;
 
 export default GlobalStyles;

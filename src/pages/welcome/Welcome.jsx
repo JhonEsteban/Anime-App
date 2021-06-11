@@ -4,11 +4,12 @@ import {
   Banner,
   Wrapper,
   MainText,
-  Button,
 } from './Styles';
 
 import Image from '../../assets/images/background-image.png';
 import MainLogo from '../../components/mainLogo/MainLogo';
+
+import Button from '../../assets/styles/ButtonStyles';
 
 const Welcome = ({ history }) => {
   const handleRegister = () => history.push('/register');

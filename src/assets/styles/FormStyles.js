@@ -3,15 +3,21 @@ import styled from 'styled-components';
 const LoginContainer = styled.section`
   min-height: 100vh;
   background-color: #000;
-  padding: 15px;
 `;
 
 const LoginForm = styled.form`
+  position: absolute;
   width: 100%;
+  height: 100%;
   max-width: 320px;
-  margin: auto;
-  padding: 80px 0;
+  max-height: 460px;
   text-align: center;
+  margin: auto;
+  padding: 0 15px;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
 `;
 
 const Input = styled.input`
@@ -26,24 +32,4 @@ const Input = styled.input`
   font-size: 1.3rem;
 `;
 
-const ButtonSubmit = styled.button`
-  display: block;
-  width: 100%;
-  max-width: 340px;
-  margin: 20px auto;
-  padding: 13px 0;
-  text-transform: uppercase;
-  font-size: 1.8rem;
-  border: none;
-  border-radius: 5px;
-  background-color: #16417a;
-  color: white;
-  cursor: pointer;
-  transition: background-color 200ms;
-
-  &:hover {
-    background-color: #092954;
-  }
-`;
-
-export { LoginContainer, LoginForm, Input, ButtonSubmit };
+export { LoginContainer, LoginForm, Input };

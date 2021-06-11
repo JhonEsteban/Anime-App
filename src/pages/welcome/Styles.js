@@ -47,25 +47,4 @@ const MainText = styled.p`
   line-height: 28px;
 `;
 
-const Button = styled.button`
-  display: block;
-  width: 100%;
-  max-width: 340px;
-  margin: auto;
-  margin-top: 25px;
-  padding: 13px 0;
-  text-transform: uppercase;
-  font-size: 1.8rem;
-  border: none;
-  border-radius: 5px;
-  background-color: #16417a;
-  color: white;
-  cursor: pointer;
-  transition: background-color 200ms;
-
-  &:hover {
-    background-color: #092954;
-  }
-`;
-
-export { WelcomeSection, BannerContainer, Banner, Wrapper, MainText, Button };
+export { WelcomeSection, BannerContainer, Banner, Wrapper, MainText };

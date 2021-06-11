@@ -2,7 +2,7 @@ import styled from 'styled-components';
 
 const MainLogoSection = styled.section`
   text-align: center;
-  margin-bottom: 50px;
+  margin-bottom: 25px;
 `;
 
 const LogoContainer = styled.figure`
