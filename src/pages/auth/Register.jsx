@@ -1,6 +1,5 @@
 import { Link } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
-import { FcGoogle } from 'react-icons/fc';
 
 import {
   Input,
@@ -10,10 +9,7 @@ import {
 
 import Button from '../../assets/styles/ButtonStyles';
 
-import {
-  registerUserWithEmailAndPassword,
-  registerUserWithGoogleProvider,
-} from '../../actions/authAction';
+import { registerUserWithEmailAndPassword } from '../../actions/authAction';
 
 import useForm from '../../hooks/useForm';
 import MainLogo from '../../components/mainLogo/MainLogo';
@@ -22,13 +18,6 @@ const initialValues = {
   name: '',
   email: '',
   password: '',
-};
-
-const btnProviderStyles = {
-  background: '#fff',
-  color: '#000',
-  hoverBackground: '#16417a',
-  hoverColor: '#fff',
 };
 
 const Register = () => {
@@ -40,10 +29,6 @@ const Register = () => {
   const handleRegister = (e) => {
     e.preventDefault();
     dispatch(registerUserWithEmailAndPassword(name, email, password));
-  };
-
-  const handleRegisterWithProvider = () => {
-    dispatch(registerUserWithGoogleProvider());
   };
 
   return (
@@ -76,16 +61,6 @@ const Register = () => {
         />
 
         <Button type='submit'>Registrarte</Button>
-
-        <Button
-          onClick={handleRegisterWithProvider}
-          btnProvider
-          {...btnProviderStyles}
-          type='button'
-        >
-          <FcGoogle />
-          <span>Regístrate con Google</span>
-        </Button>
 
         <Link to='/login'>Inicia sesión</Link>
       </LoginForm>

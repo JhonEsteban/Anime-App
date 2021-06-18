@@ -6,7 +6,10 @@ const loginUser = (uid, displayName) => ({
   payload: { uid, displayName },
 });
 
-// eslint-disable-next-line arrow-body-style
+const logoutUser = () => ({
+  type: types.logUp,
+});
+
 const registerUserWithEmailAndPassword = (name, email, password) => {
   return (dispatch) => {
     firebase
@@ -14,24 +17,48 @@ const registerUserWithEmailAndPassword = (name, email, password) => {
       .createUserWithEmailAndPassword(email, password)
       .then(async ({ user }) => {
         await user.updateProfile({ displayName: name });
-
-        const { uid, displayName } = user;
-        dispatch(loginUser(uid, displayName));
+        dispatch(loginUser(user.uid, user.displayName));
       });
   };
 };
 
-// eslint-disable-next-line arrow-body-style
-const registerUserWithGoogleProvider = () => {
+const loginUserWithGoogleProvider = () => {
   return (dispatch) => {
     firebase
       .auth()
       .signInWithPopup(GoogleAuthProvider)
       .then(({ user }) => {
-        const { uid, displayName } = user;
-        dispatch(loginUser(uid, displayName));
+        dispatch(loginUser(user.uid, user.displayName));
       });
   };
 };
 
-export { registerUserWithEmailAndPassword, registerUserWithGoogleProvider };
+const loginUserWithEmailAndPassword = (email, password) => {
+  return (dispatch) => {
+    firebase
+      .auth()
+      .signInWithEmailAndPassword(email, password)
+      .then(({ user }) => {
+        dispatch(loginUser(user.uid, user.displayName));
+      });
+  };
+};
+
+const closeUserSession = () => {
+  return (dispatch) => {
+    firebase
+      .auth()
+      .signOut()
+      .then(() => {
+        dispatch(logoutUser());
+      });
+  };
+};
+
+export {
+  loginUser,
+  registerUserWithEmailAndPassword,
+  loginUserWithGoogleProvider,
+  loginUserWithEmailAndPassword,
+  closeUserSession,
+};

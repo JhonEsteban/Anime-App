@@ -1,14 +1,14 @@
 import { Provider } from 'react-redux';
 
-import AnimeAppRouter from './router/AnimeAppRouter';
 import GlobalStyles from './assets/styles/GlobalStyles';
+import AppRouter from './router/AppRouter';
 
 import store from './store';
 
 const App = () => (
   <Provider store={store}>
     <GlobalStyles />
-    <AnimeAppRouter />
+    <AppRouter />
   </Provider>
 );
 
