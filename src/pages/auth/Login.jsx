@@ -9,7 +9,7 @@ import useForm from '../../hooks/useForm';
 import {
   loginUserWithEmailAndPassword,
   loginUserWithGoogleProvider,
-} from '../../actions/authAction';
+} from '../../actions/authActions';
 
 import {
   Input,

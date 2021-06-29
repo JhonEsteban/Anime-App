@@ -1,7 +1,9 @@
+import { FooterSection, FooterTitle } from './styles';
+
 const Footer = () => (
-  <footer>
-    <h1>Footer Component</h1>
-  </footer>
+  <FooterSection>
+    <FooterTitle>Footer Component</FooterTitle>
+  </FooterSection>
 );
 
 export default Footer;

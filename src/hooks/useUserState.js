@@ -2,7 +2,7 @@ import { useEffect, useState } from 'react';
 import { useDispatch } from 'react-redux';
 
 import { firebase } from '../firebase';
-import { loginUser } from '../actions/authAction';
+import { loginUser } from '../actions/authActions';
 
 const useUserState = () => {
   const dispatch = useDispatch();

@@ -9,7 +9,7 @@ import {
 
 import Button from '../../assets/styles/ButtonStyles';
 
-import { registerUserWithEmailAndPassword } from '../../actions/authAction';
+import { registerUserWithEmailAndPassword } from '../../actions/authActions';
 
 import useForm from '../../hooks/useForm';
 import MainLogo from '../../components/mainLogo/MainLogo';

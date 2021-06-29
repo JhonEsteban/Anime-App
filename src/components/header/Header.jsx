@@ -1,5 +1,5 @@
 import { useDispatch } from 'react-redux';
-import { closeUserSession } from '../../actions/authAction';
+import { closeUserSession } from '../../actions/authActions';
 
 const Header = () => {
   const dispatch = useDispatch();
