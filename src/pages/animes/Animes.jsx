@@ -5,7 +5,7 @@ import { AnimesSection, AnimesContainer } from './styles';
 
 import { loadAnimes } from '../../actions/animesActions';
 
-import Banner from '../../components/banner/Banner';
+import HeroImage from '../../components/heroImage/heroImage';
 import AnimeCard from '../../components/animeCard/AnimeCard';
 
 const Animes = () => {
@@ -21,7 +21,7 @@ const Animes = () => {
 
   return (
     <AnimesSection>
-      <Banner />
+      <HeroImage />
 
       <AnimesContainer>
         {loading ? (

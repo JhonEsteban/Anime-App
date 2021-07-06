@@ -1,12 +1,8 @@
-import FavoriteAnimeCard from '../../components/favoriteAnimeCard/FavoriteAnimeCard';
+import { Container, Title } from './styles';
 
 const FavoriteAnimes = () => (
-  <section>
-    <h1>Favorite Animes Page</h1>
-
-    <div>
-      <FavoriteAnimeCard />
-    </div>
-  </section>
+  <Container>
+    <Title>Página actualmente en desarrollo</Title>
+  </Container>
 );
 export default FavoriteAnimes;

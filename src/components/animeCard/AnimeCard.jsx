@@ -1,6 +1,6 @@
 import { useHistory } from 'react-router-dom';
 
-import { AnimeContent, Image, ImageContainer, Title } from './styles';
+import { AnimeContent, Image, ImageContainer } from './styles';
 
 const AnimeCard = ({ mal_id: id, title, image_url: image }) => {
   const history = useHistory();
@@ -14,7 +14,6 @@ const AnimeCard = ({ mal_id: id, title, image_url: image }) => {
       <ImageContainer>
         <Image src={image} alt={title} />
       </ImageContainer>
-      <Title>{title}</Title>
     </AnimeContent>
   );
 };

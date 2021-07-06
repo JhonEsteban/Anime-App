@@ -11,6 +11,14 @@ const FooterSection = styled.footer`
 
 const FooterTitle = styled.h4`
   color: white;
+  font-size: 1.8rem;
+  line-height: 25px;
 `;
 
-export { FooterSection, FooterTitle };
+const FooterLogo = styled.img`
+  width: 60px;
+  border-radius: 50%;
+  margin: auto;
+`;
+
+export { FooterSection, FooterTitle, FooterLogo };

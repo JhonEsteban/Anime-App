@@ -1,8 +1,11 @@
-import { FooterSection, FooterTitle } from './styles';
+import logo from '../../assets/images/main-logo.jpg';
+
+import { FooterLogo, FooterSection, FooterTitle } from './styles';
 
 const Footer = () => (
   <FooterSection>
-    <FooterTitle>Footer Component</FooterTitle>
+    <FooterLogo src={logo} alt='footer logo' />
+    <FooterTitle>Desarrollado por Jhon Esteban Herrera</FooterTitle>
   </FooterSection>
 );
 

@@ -1,20 +1,18 @@
-import AnimeCard from '../../components/animeCard/AnimeCard';
-import AnimesFinder from '../../components/animesFinder/AnimesFinder';
+import { SearchAnimeP, Title } from './styles';
 
 const SearchAnime = () => (
-  <section>
-    <h1>Search Anime Page</h1>
+  <SearchAnimeP>
+    <Title>Página actualmente en desarrollo</Title>
+    {/* <button type='button'>Regresar</button>
 
-    <div>
-      <div>
-        <AnimesFinder />
-      </div>
+    <Container>
+      <AnimesFinder />
 
       <div>
-        <AnimeCard />
+        <p>No se encontraron resultados!</p>
       </div>
-    </div>
-  </section>
+    </Container> */}
+  </SearchAnimeP>
 );
 
 export default SearchAnime;
