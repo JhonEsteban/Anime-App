@@ -4,6 +4,7 @@ const initialState = {
   animes: [],
   anime: {},
   favorites: [],
+  foundAnimes: [],
 };
 
 const animesReducer = (state = initialState, action) => {
@@ -17,7 +18,7 @@ const animesReducer = (state = initialState, action) => {
     case types.addToFavorites:
       return {
         ...state,
-        favorites: [...action.payload],
+        favorites: [...action.payload, initialState.favorites],
       };
 
     case types.deleteFromFavorites:
@@ -44,6 +45,18 @@ const animesReducer = (state = initialState, action) => {
       return {
         ...state,
         anime: {},
+      };
+
+    case types.addFoundAnimes:
+      return {
+        ...state,
+        foundAnimes: action.payload,
+      };
+
+    case types.clearFoundAnimes:
+      return {
+        ...state,
+        foundAnimes: [],
       };
 
     default:

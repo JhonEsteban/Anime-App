@@ -1,19 +1,18 @@
 import styled from 'styled-components';
 
 const AnimeContent = styled.article`
-  background-color: #000;
-  color: white;
   width: 100%;
-  text-align: center;
   max-width: 280px;
-  cursor: pointer;
-  margin: 0 auto;
+  margin: 0 auto 20px;
+  color: white;
+  text-align: center;
   border-radius: 10px;
+  cursor: pointer;
   overflow: hidden;
   transition: transform ease 300ms;
 
   &:hover {
-    transform: scale(1.1) translateY(5px);
+    transform: scale(1.1);
   }
 `;
 

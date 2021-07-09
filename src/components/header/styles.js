@@ -5,7 +5,6 @@ const HeaderContainer = styled.header`
   position: fixed;
   top: 0;
   background-color: hsl(248deg 82% 28% / 90%);
-  box-shadow: 0 4px 5px 1px hsl(248deg 82% 28% / 90%);
   color: white;
   padding: 10px 0;
   z-index: 100;

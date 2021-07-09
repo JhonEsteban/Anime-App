@@ -19,12 +19,12 @@ const Anime = ({ history }) => {
   const { animeId } = useParams();
 
   const { anime } = useSelector((state) => state.animes);
+
   const {
     title,
     image_url: image,
     synopsis,
     trailer_url: trailer,
-    title_english: titleEnglish,
     episodes,
     score,
     duration,
@@ -36,7 +36,7 @@ const Anime = ({ history }) => {
 
   const handleReturn = () => {
     dispatch(deleteSingleAnime());
-    history.push('/animes');
+    history.goBack();
   };
 
   return (
@@ -50,7 +50,6 @@ const Anime = ({ history }) => {
 
         <Details>
           <h1>{title}</h1>
-          <h4>{titleEnglish}</h4>
 
           <p>
             <strong>Episodios: </strong>

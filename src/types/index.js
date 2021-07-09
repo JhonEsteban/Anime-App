@@ -7,6 +7,8 @@ const types = {
   deleteAllFavorites: '[ANIMES] Delete All Favorites',
   addSingleAnime: '[SINGLE ANIME] Add Single Anime',
   deleteSingleAnime: '[SINGLE ANIME] Delete Single Anime',
+  addFoundAnimes: '[FOUND ANIMES] Add Found Animes',
+  clearFoundAnimes: '[FOUND ANIMES] Clear Found Animes',
 };
 
 export default types;
