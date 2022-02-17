@@ -3,12 +3,12 @@ import firebase from 'firebase/app';
 import 'firebase/auth';
 
 const firebaseConfig = {
-  apiKey: 'AIzaSyB0g_JgQLZrYTuMupAb7ePk6Z2lRCwp554',
-  authDomain: 'animes-prime.firebaseapp.com',
-  projectId: 'animes-prime',
-  storageBucket: 'animes-prime.appspot.com',
-  messagingSenderId: '1003204902591',
-  appId: '1:1003204902591:web:7225d8f48f9c5cf319d00a',
+  apiKey: "AIzaSyAdiVVo2i49Ab_vhTHYiBB0m2Y3DYnZ60Y",
+  authDomain: "animes-prime-fb95e.firebaseapp.com",
+  projectId: "animes-prime-fb95e",
+  storageBucket: "animes-prime-fb95e.appspot.com",
+  messagingSenderId: "1044879097535",
+  appId: "1:1044879097535:web:3cf5a59535f7727db1100a"
 };
 
 firebase.initializeApp(firebaseConfig);

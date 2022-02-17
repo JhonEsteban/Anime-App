@@ -6,7 +6,6 @@ const Button = styled.button`
   max-width: 340px;
   margin: 18px auto 15px;
   padding: 13px 0;
-  text-transform: capitalize;
   font-size: 1.8rem;
   letter-spacing: 0.5px;
   border: none;

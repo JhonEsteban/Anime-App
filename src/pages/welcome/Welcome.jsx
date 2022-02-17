@@ -31,7 +31,7 @@ const Welcome = ({ history }) => {
         </Button>
 
         <Button onClick={handleLogin} type='button'>
-          Iniciar Sesión
+          Iniciar sesión
         </Button>
       </Wrapper>
     </WelcomeSection>

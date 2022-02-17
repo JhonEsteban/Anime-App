@@ -16,6 +16,7 @@ const BannerContainer = styled.div`
   opacity: 0.8;
 
   @media screen and (min-width: 720px) {
+    width: 50%;
     height: 100vh;
   }
 `;

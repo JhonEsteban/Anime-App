@@ -1,23 +1,28 @@
 import { useDispatch } from 'react-redux';
 
+import useForm from '../../hooks/useForm';
+
 import { FormSearch, InputSearch, ButtonSearch } from './styles';
 
 import { getAnimesByQueryString } from '../../actions/animesActions';
 
-const AnimesFinder = ({ search, handleInputChange, resetForm }) => {
+const AnimesFinder = () => {
   const dispatch = useDispatch();
+
+  const { formValues, handleInputChange, resetForm } = useForm();
+  const { search } = formValues;
 
   const handleSearch = (e) => {
     e.preventDefault();
 
-    const isInvalidString = search.trim().length === 0;
+    const isInvalidString = search.trim().length > 0;
 
-    if (isInvalidString) {
+    if (!isInvalidString) {
       return;
     }
 
-    dispatch(getAnimesByQueryString(search.trim()));
     resetForm();
+    dispatch(getAnimesByQueryString(search.trim()));
   };
 
   return (
@@ -27,7 +32,7 @@ const AnimesFinder = ({ search, handleInputChange, resetForm }) => {
         value={search}
         name='search'
         type='search'
-        placeholder='Buscar anime'
+        placeholder='Busca tus animes favoritos'
       />
 
       <ButtonSearch type='submit'>Buscar</ButtonSearch>

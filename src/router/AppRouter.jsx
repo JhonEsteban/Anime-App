@@ -1,4 +1,9 @@
-import { BrowserRouter as Router, Switch, Redirect } from 'react-router-dom';
+import {
+  BrowserRouter as Router,
+  Switch,
+  Redirect,
+  HashRouter,
+} from 'react-router-dom';
 
 import useUserState from '../hooks/useUserState';
 
@@ -23,35 +28,37 @@ const AppRouter = () => {
 
   return (
     <Router>
-      <Switch>
-        <PublicRoute
-          hasSessionActive={hasSessionActive}
-          path='/welcome'
-          component={Welcome}
-        />
-
-        <PublicRoute
-          hasSessionActive={hasSessionActive}
-          path='/login'
-          component={Login}
-        />
-
-        <PublicRoute
-          hasSessionActive={hasSessionActive}
-          path='/register'
-          component={Register}
-        />
-
-        <Layout>
-          <PrivateRoute
+      <HashRouter>
+        <Switch>
+          <PublicRoute
             hasSessionActive={hasSessionActive}
-            path='/'
-            component={HomeRoutes}
+            path='/welcome'
+            component={Welcome}
           />
-        </Layout>
 
-        <Redirect to='/welcome' />
-      </Switch>
+          <PublicRoute
+            hasSessionActive={hasSessionActive}
+            path='/login'
+            component={Login}
+          />
+
+          <PublicRoute
+            hasSessionActive={hasSessionActive}
+            path='/register'
+            component={Register}
+          />
+
+          <Layout>
+            <PrivateRoute
+              hasSessionActive={hasSessionActive}
+              path='/'
+              component={HomeRoutes}
+            />
+          </Layout>
+
+          <Redirect to='/welcome' />
+        </Switch>
+      </HashRouter>
     </Router>
   );
 };
