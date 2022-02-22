@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import fadeIn from '../../assets/styles/animations';
 
 const SearchAnimeP = styled.section`
   min-height: 88vh;
@@ -6,12 +7,22 @@ const SearchAnimeP = styled.section`
   padding: 0 20px;
 `;
 
+const SearchAnimeHeading = styled.div`
+  ${fadeIn({ time: '2s' })}
+`;
+
 const Container = styled.div`
   display: grid;
 
   @media screen and (min-width: 720px) {
-    width: 88%;
+    width: 95%;
     margin: auto;
+    row-gap: 20px;
+    grid-template-columns: 1fr 1fr;
+  }
+
+  @media screen and (min-width: 1024px) {
+    width: 88%;
     grid-template-columns: 1fr 2fr;
   }
 `;
@@ -24,6 +35,8 @@ const Title = styled.h1`
 const AnimesContainer = styled.div`
   display: flex;
   flex-wrap: wrap;
+  gap: 40px;
+  justify-content: center;
 `;
 
 const ButtonReturn = styled.button`
@@ -39,4 +52,11 @@ const ButtonReturn = styled.button`
   color: white;
 `;
 
-export { SearchAnimeP, Container, Title, AnimesContainer, ButtonReturn };
+export {
+  SearchAnimeP,
+  SearchAnimeHeading,
+  Container,
+  Title,
+  AnimesContainer,
+  ButtonReturn,
+};

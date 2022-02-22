@@ -2,17 +2,23 @@ import types from '../types';
 
 const initialState = {
   animes: [],
+  mangas: [],
+  characters: [],
   anime: {},
+  manga: {},
+  character: {},
   favorites: [],
   foundAnimes: [],
 };
 
 const animesReducer = (state = initialState, action) => {
   switch (action.type) {
-    case types.getAnimes:
+    case types.getAllResources:
       return {
         ...state,
-        animes: [...action.payload],
+        animes: action.payload.animes,
+        mangas: action.payload.mangas,
+        characters: action.payload.characters,
       };
 
     case types.addToFavorites:
@@ -45,6 +51,38 @@ const animesReducer = (state = initialState, action) => {
       return {
         ...state,
         anime: {},
+      };
+
+    case types.addSingleManga:
+      return {
+        ...state,
+        manga: { ...action.payload },
+      };
+
+    case types.deleteSingleManga:
+      return {
+        ...state,
+        manga: {},
+      };
+
+    case types.addSingleCharacter:
+      return {
+        ...state,
+        character: { ...action.payload },
+      };
+
+    case types.deleteSingleCharacter:
+      return {
+        ...state,
+        character: {},
+      };
+
+    case types.deleteSingleResources:
+      return {
+        ...state,
+        anime: {},
+        manga: {},
+        character: {},
       };
 
     case types.addFoundAnimes:

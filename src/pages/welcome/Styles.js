@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import fadeIn from '../../assets/styles/animations';
 
 const WelcomeSection = styled.section`
   min-height: 100vh;
@@ -14,6 +15,7 @@ const WelcomeSection = styled.section`
 
 const BannerContainer = styled.div`
   opacity: 0.8;
+  ${fadeIn({ time: '2s' })}
 
   @media screen and (min-width: 720px) {
     width: 50%;
@@ -23,6 +25,7 @@ const BannerContainer = styled.div`
 
 const Banner = styled.img`
   max-width: 100%;
+  ${fadeIn({ time: '2s' })}
 
   @media screen and (min-width: 720px) {
     height: 100vh;
@@ -30,6 +33,7 @@ const Banner = styled.img`
 `;
 
 const Wrapper = styled.div`
+  ${fadeIn({ time: '2s' })}
   padding: 0 15px 35px;
 
   @media screen and (min-width: 720px) {

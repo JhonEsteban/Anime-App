@@ -1,8 +1,8 @@
-import Container from './styles';
+import { Container, Loader } from './styles';
 
 const AppLoading = () => (
   <Container>
-    <h1>Cargando...</h1>
+    <Loader>Cargando...</Loader>
   </Container>
 );
 

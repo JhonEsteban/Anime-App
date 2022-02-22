@@ -9,7 +9,7 @@ const FooterSection = styled.footer`
   margin-top: 50px;
 `;
 
-const FooterTitle = styled.h4`
+const FooterDescription = styled.h4`
   color: white;
   font-size: 1.8rem;
   line-height: 25px;
@@ -21,4 +21,19 @@ const FooterLogo = styled.img`
   margin: auto;
 `;
 
-export { FooterSection, FooterTitle, FooterLogo };
+const DevelopedBy = styled.span`
+  display: block;
+`;
+
+const Profession = styled.span`
+  display: block;
+  margin-top: 5px;
+`;
+
+export {
+  FooterSection,
+  FooterLogo,
+  FooterDescription,
+  DevelopedBy,
+  Profession,
+};

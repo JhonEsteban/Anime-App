@@ -27,14 +27,18 @@ const Wrapper = styled.div`
   }
 `;
 
+const ButtonLogo = styled.button`
+  border: none;
+  background-color: transparent;
+  cursor: pointer;
+`;
+
 const Logo = styled.img`
   width: 60px;
   border-radius: 50%;
 `;
 
-const Options = styled.div`
-  /* border: 1px solid red; */
-`;
+const Options = styled.div``;
 
 const Button = styled.button`
   background: #ccc;
@@ -68,4 +72,12 @@ const ButtonLogOut = styled.button`
   }
 `;
 
-export { HeaderContainer, Logo, Options, Button, ButtonLogOut, Wrapper };
+export {
+  HeaderContainer,
+  Logo,
+  Options,
+  Button,
+  ButtonLogOut,
+  Wrapper,
+  ButtonLogo,
+};

@@ -6,6 +6,7 @@ import {
   AnimeData,
   AnimePage,
   SingleAnime,
+  SingleAnimeHeading,
   Image,
   Trailer,
   Button,
@@ -41,12 +42,13 @@ const Anime = ({ history }) => {
 
   return (
     <AnimePage>
-      <Button onClick={handleReturn} type='button'>
-        Regresar
-      </Button>
-
       <SingleAnime>
-        <Image src={image} alt={title} />
+        <SingleAnimeHeading>
+          <Button onClick={handleReturn} type='button'>
+            Regresar
+          </Button>
+          <Image src={image} alt={title} />
+        </SingleAnimeHeading>
 
         <Details>
           <h1>{title}</h1>

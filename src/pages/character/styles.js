@@ -1,14 +1,14 @@
 import styled from 'styled-components';
 import fadeIn from '../../assets/styles/animations';
 
-const AnimePage = styled.section`
+const CharacterPage = styled.section`
   min-height: 88vh;
   margin-top: 100px;
   padding-left: 15px;
   padding-right: 15px;
 `;
 
-const SingleAnime = styled.article`
+const SingleCharacter = styled.article`
   display: grid;
   row-gap: 10px;
 
@@ -24,8 +24,19 @@ const SingleAnime = styled.article`
   }
 `;
 
-const SingleAnimeHeading = styled.div`
+const SingleCharacterHeading = styled.div`
   ${fadeIn({ time: '2s' })}
+`;
+
+const Button = styled.button`
+  margin: 0 5px;
+  padding: 13px 10px;
+  border: none;
+  border-radius: 5px;
+  font-size: 1.3rem;
+  cursor: pointer;
+  background: #208397;
+  color: white;
 `;
 
 const Image = styled.img`
@@ -49,7 +60,7 @@ const Details = styled.div`
   }
 `;
 
-const AnimeData = styled.div`
+const CharacterData = styled.div`
   font-size: 1.8rem;
   line-height: 30px;
   word-wrap: break-word;
@@ -57,38 +68,12 @@ const AnimeData = styled.div`
   ${fadeIn({ time: '2s' })}
 `;
 
-const Trailer = styled.div`
-  height: 0;
-  padding-bottom: 56.25%;
-  position: relative;
-  grid-column: 1 / -1;
-  margin-bottom: 50px;
-
-  > iframe {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-  }
-`;
-
-const Button = styled.button`
-  margin: 0 5px;
-  padding: 13px 10px;
-  border: none;
-  border-radius: 5px;
-  font-size: 1.3rem;
-  cursor: pointer;
-  background: #208397;
-  color: white;
-`;
-
 export {
-  AnimePage,
-  SingleAnime,
-  SingleAnimeHeading,
-  Details,
-  AnimeData,
-  Image,
-  Trailer,
+  CharacterPage,
+  SingleCharacter,
+  SingleCharacterHeading,
   Button,
+  Image,
+  Details,
+  CharacterData,
 };

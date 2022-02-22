@@ -1,10 +1,11 @@
 import styled from 'styled-components';
 
 const FormSearch = styled.form`
-  /* border: 1px solid red; */
-  /* padding-left: 10px;
-  padding-right: 10px; */
-  /* margin: 30px auto; */
+  text-align: center;
+
+  @media screen and (min-width: 720px) {
+    text-align: initial;
+  }
 `;
 
 const InputSearch = styled.input`

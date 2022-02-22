@@ -2,9 +2,9 @@ import types from '../types';
 
 const apiBase = 'https://api.jikan.moe/v3';
 
-const getAnimes = (animes) => ({
-  type: types.getAnimes,
-  payload: animes,
+const getAllResources = (resources) => ({
+  type: types.getAllResources,
+  payload: resources,
 });
 
 const addAnimeToFavorite = (anime) => ({
@@ -21,6 +21,28 @@ const deleteSingleAnime = () => ({
   type: types.deleteSingleAnime,
 });
 
+const getSingleManga = (manga) => ({
+  type: types.addSingleManga,
+  payload: manga,
+});
+
+const deleteSingleManga = () => ({
+  type: types.deleteSingleManga,
+});
+
+const getSingleCharacter = (character) => ({
+  type: types.addSingleCharacter,
+  payload: character,
+});
+
+const deleteSingleCharacter = () => ({
+  type: types.deleteSingleCharacter,
+});
+
+const deleteSingleResources = () => ({
+  type: types.deleteSingleResources,
+});
+
 const getFoundAnimes = (animes) => ({
   type: types.addFoundAnimes,
   payload: animes,
@@ -30,11 +52,25 @@ const clearAllFoundAnimes = () => ({
   type: types.clearFoundAnimes,
 });
 
-const loadAnimes = () => {
+const loadResources = () => {
   return (dispatch) => {
-    fetch(`${apiBase}/top/anime`)
-      .then((resp) => resp.json())
-      .then((data) => dispatch(getAnimes(data.top)));
+    const urls = [
+      `${apiBase}/top/anime`,
+      `${apiBase}/top/manga`,
+      `${apiBase}/top/characters`,
+    ];
+
+    const fetchData = (url) => fetch(url).then((resp) => resp.json());
+
+    Promise.all(urls.map(fetchData)).then(([animes, mangas, characters]) => {
+      dispatch(
+        getAllResources({
+          animes: animes.top,
+          mangas: mangas.top,
+          characters: characters.top,
+        })
+      );
+    });
   };
 };
 
@@ -45,6 +81,26 @@ const getAnimeById = (animeId) => {
     fetch(`${apiBase}/anime/${animeId}`)
       .then((resp) => resp.json())
       .then((data) => dispatch(getSingleAnime(data)));
+  };
+};
+
+const getMangaById = (mangaId) => {
+  return (dispatch) => {
+    dispatch(clearAllFoundAnimes());
+
+    fetch(`${apiBase}/manga/${mangaId}`)
+      .then((resp) => resp.json())
+      .then((data) => dispatch(getSingleManga(data)));
+  };
+};
+
+const getCharacterById = (characterId) => {
+  return (dispatch) => {
+    dispatch(clearAllFoundAnimes());
+
+    fetch(`${apiBase}/character/${characterId}`)
+      .then((resp) => resp.json())
+      .then((data) => dispatch(getSingleCharacter(data)));
   };
 };
 
@@ -59,11 +115,15 @@ const getAnimesByQueryString = (queryString) => {
 };
 
 export {
-  loadAnimes,
-  getAnimes,
-  addAnimeToFavorite,
+  loadResources,
   getAnimeById,
+  getMangaById,
+  getCharacterById,
   deleteSingleAnime,
+  deleteSingleManga,
+  deleteSingleCharacter,
+  deleteSingleResources,
+  addAnimeToFavorite,
   getAnimesByQueryString,
   clearAllFoundAnimes,
 };

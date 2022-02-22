@@ -2,12 +2,11 @@ import { useHistory } from 'react-router-dom';
 
 import { AnimeContent, Image, ImageContainer } from './styles';
 
-const AnimeCard = ({ mal_id: id, title, image_url: image }) => {
+const MangaCard = ({ mal_id: id, title, image_url: image }) => {
   const history = useHistory();
 
   const handleAnime = () => {
-    console.log(title.trim());
-    history.push(`/anime/${id}`);
+    history.push(`/manga/${id}`);
   };
 
   return (
@@ -19,4 +18,4 @@ const AnimeCard = ({ mal_id: id, title, image_url: image }) => {
   );
 };
 
-export default AnimeCard;
+export default MangaCard;

@@ -9,7 +9,7 @@ import { getAnimesByQueryString } from '../../actions/animesActions';
 const AnimesFinder = () => {
   const dispatch = useDispatch();
 
-  const { formValues, handleInputChange, resetForm } = useForm();
+  const { formValues, handleInputChange, resetForm } = useForm({ search: '' });
   const { search } = formValues;
 
   const handleSearch = (e) => {
@@ -21,8 +21,8 @@ const AnimesFinder = () => {
       return;
     }
 
-    resetForm();
     dispatch(getAnimesByQueryString(search.trim()));
+    resetForm();
   };
 
   return (
@@ -33,9 +33,12 @@ const AnimesFinder = () => {
         name='search'
         type='search'
         placeholder='Busca tus animes favoritos'
+        autoComplete='off'
       />
 
-      <ButtonSearch type='submit'>Buscar</ButtonSearch>
+      <ButtonSearch onClick={handleSearch} type='submit'>
+        Buscar
+      </ButtonSearch>
     </FormSearch>
   );
 };

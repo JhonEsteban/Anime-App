@@ -4,6 +4,7 @@ import { useEffect } from 'react';
 import {
   Container,
   SearchAnimeP,
+  SearchAnimeHeading,
   AnimesContainer,
   ButtonReturn,
 } from './styles';
@@ -39,7 +40,7 @@ const SearchAnime = ({ history }) => {
   return (
     <SearchAnimeP>
       <Container>
-        <div>
+        <SearchAnimeHeading>
           <ButtonReturn onClick={handleReturn} type='button'>
             Regresar
           </ButtonReturn>
@@ -49,7 +50,7 @@ const SearchAnime = ({ history }) => {
             handleInputChange={handleInputChange}
             resetForm={resetForm}
           />
-        </div>
+        </SearchAnimeHeading>
 
         <AnimesContainer>
           {foundAnimes.map((anime) => (
@@ -60,10 +61,5 @@ const SearchAnime = ({ history }) => {
     </SearchAnimeP>
   );
 };
-
-// <div key={id}>
-//   <img src={image} alt={title} />
-//   <h3>{title}</h3>
-// </div>
 
 export default SearchAnime;

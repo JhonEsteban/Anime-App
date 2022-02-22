@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import fadeIn from './animations';
 
 const LoginContainer = styled.section`
   min-height: 100vh;
@@ -6,6 +7,7 @@ const LoginContainer = styled.section`
 `;
 
 const LoginForm = styled.form`
+  ${fadeIn({ time: '2s' })}
   position: absolute;
   width: 100%;
   height: 100%;
