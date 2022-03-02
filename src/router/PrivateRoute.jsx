@@ -4,7 +4,11 @@ const PrivateRoute = ({ hasSessionActive, component: Component, ...rest }) => (
   <Route
     {...rest}
     render={(props) =>
-      hasSessionActive ? <Component {...props} /> : <Redirect to='/welcome' />
+      hasSessionActive ? (
+        <Component {...props} />
+      ) : (
+        <Redirect to='/auth/login' />
+      )
     }
   />
 );

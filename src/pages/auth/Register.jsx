@@ -1,19 +1,14 @@
 import { Link } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
-
 import { useForm } from 'react-hook-form';
 
-import {
-  Input,
-  LoginContainer,
-  LoginForm,
-} from '../../assets/styles/FormStyles';
-
+import Auth from './Auth';
+import MainLogo from '../../components/mainLogo/MainLogo';
 import Button from '../../assets/styles/ButtonStyles';
 
-import { registerUserWithEmailAndPassword } from '../../actions/authActions';
+import { LoginForm, Input } from './Styles';
 
-import MainLogo from '../../components/mainLogo/MainLogo';
+import { registerUserWithEmailAndPassword } from '../../actions/authActions';
 
 const Register = () => {
   const dispatch = useDispatch();
@@ -29,13 +24,14 @@ const Register = () => {
   };
 
   return (
-    <LoginContainer>
+    <Auth>
       <LoginForm onSubmit={handleSubmit(onSubmit)}>
         <MainLogo />
 
         <Input
           name='name'
           type='text'
+          autoFocus
           placeholder='Nombre'
           {...register('name', {
             required: {
@@ -92,9 +88,9 @@ const Register = () => {
 
         <Button type='submit'>Crear cuenta</Button>
 
-        <Link to='/login'>Iniciar sesión</Link>
+        <Link to='/auth/login'>Iniciar sesión</Link>
       </LoginForm>
-    </LoginContainer>
+    </Auth>
   );
 };
 

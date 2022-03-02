@@ -4,7 +4,7 @@ import {
   Banner,
   Wrapper,
   MainText,
-} from './Styles';
+} from '../auth/Styles';
 
 import Image from '../../assets/images/background-image.png';
 import MainLogo from '../../components/mainLogo/MainLogo';

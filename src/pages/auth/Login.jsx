@@ -1,28 +1,23 @@
-import { useDispatch } from 'react-redux';
 import { Link } from 'react-router-dom';
+import { useDispatch } from 'react-redux';
+import { useForm } from 'react-hook-form';
 import { FcGoogle } from 'react-icons/fc';
 
-import { useForm } from 'react-hook-form';
-
+import Auth from './Auth';
 import MainLogo from '../../components/mainLogo/MainLogo';
+import Button from '../../assets/styles/ButtonStyles';
+
+import { LoginForm, Input } from './Styles';
 
 import {
   loginUserWithEmailAndPassword,
   loginUserWithGoogleProvider,
 } from '../../actions/authActions';
 
-import {
-  Input,
-  LoginForm,
-  LoginContainer,
-} from '../../assets/styles/FormStyles';
-
-import Button from '../../assets/styles/ButtonStyles';
-
 const btnProviderStyles = {
   background: '#fff',
   color: '#000',
-  hoverBackground: '#16417a',
+  hoverBackground: '#eef2f8',
   hoverColor: '#fff',
 };
 
@@ -44,13 +39,14 @@ const Login = () => {
   };
 
   return (
-    <LoginContainer>
+    <Auth>
       <LoginForm onSubmit={handleSubmit(onSubmit)}>
         <MainLogo />
 
         <Input
           name='email'
           type='email'
+          autoFocus
           placeholder='Correo electrónico'
           {...register('email', {
             required: {
@@ -92,15 +88,16 @@ const Login = () => {
           onClick={handleLoginWithProvider}
           btnProvider
           {...btnProviderStyles}
+          hoverColor='#000'
           type='button'
         >
           <FcGoogle />
           <span>Continuar con Google</span>
         </Button>
 
-        <Link to='/register'>Registrarse</Link>
+        <Link to='/auth/register'>Registrarse</Link>
       </LoginForm>
-    </LoginContainer>
+    </Auth>
   );
 };
 

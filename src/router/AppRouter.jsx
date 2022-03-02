@@ -7,7 +7,6 @@ import {
 
 import useUserState from '../hooks/useUserState';
 
-import Welcome from '../pages/welcome/Welcome';
 import Login from '../pages/auth/Login';
 import Register from '../pages/auth/Register';
 
@@ -32,19 +31,13 @@ const AppRouter = () => {
         <Switch>
           <PublicRoute
             hasSessionActive={hasSessionActive}
-            path='/welcome'
-            component={Welcome}
-          />
-
-          <PublicRoute
-            hasSessionActive={hasSessionActive}
-            path='/login'
+            path='/auth/login'
             component={Login}
           />
 
           <PublicRoute
             hasSessionActive={hasSessionActive}
-            path='/register'
+            path='/auth/register'
             component={Register}
           />
 
@@ -56,7 +49,7 @@ const AppRouter = () => {
             />
           </Layout>
 
-          <Redirect to='/welcome' />
+          <Redirect to='/auth/login' />
         </Switch>
       </HashRouter>
     </Router>
