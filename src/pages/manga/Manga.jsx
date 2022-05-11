@@ -12,13 +12,14 @@ import {
   SingleManga,
 } from './styles';
 
-import { getMangaById, deleteSingleManga } from '../../actions/animesActions';
+import { getMangaById } from '../../redux/mangas/middlewares';
+import { resetSingleMangaAction } from '../../redux/mangas/actions';
 
 const Manga = ({ history }) => {
   const dispatch = useDispatch();
   const { mangaId } = useParams();
 
-  const { manga } = useSelector((state) => state.animes);
+  const { manga } = useSelector((state) => state.mangas);
 
   const {
     title,
@@ -35,7 +36,7 @@ const Manga = ({ history }) => {
   }, [mangaId]);
 
   const handleReturn = () => {
-    dispatch(deleteSingleManga());
+    dispatch(resetSingleMangaAction());
     history.goBack();
   };
 

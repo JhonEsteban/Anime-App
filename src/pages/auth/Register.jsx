@@ -8,7 +8,7 @@ import Button from '../../assets/styles/ButtonStyles';
 
 import { LoginForm, Input } from './Styles';
 
-import { registerUserWithEmailAndPassword } from '../../actions/authActions';
+import { registerUserWithEmailAndPassword } from '../../redux/auth/middlewares';
 
 const Register = () => {
   const dispatch = useDispatch();

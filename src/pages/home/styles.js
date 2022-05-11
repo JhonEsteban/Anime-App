@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 
 const HomePage = styled.section`
-  margin-top: 20px;
+  margin-top: 82px;
   margin-bottom: 100px;
 `;
 

@@ -11,8 +11,8 @@ import { LoginForm, Input } from './Styles';
 
 import {
   loginUserWithEmailAndPassword,
-  loginUserWithGoogleProvider,
-} from '../../actions/authActions';
+  loginUserWithGoogleProvider
+} from '../../redux/auth/middlewares';
 
 const btnProviderStyles = {
   background: '#fff',

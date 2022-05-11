@@ -1,6 +1,9 @@
 import { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 
+import { getAnimes } from '../../redux/animes/middlewares';
+import { getMangas } from '../../redux/mangas/middlewares';
+
 import {
   HomePage,
   HomeSection,
@@ -8,29 +11,30 @@ import {
   HomeSectionContent,
 } from './styles';
 
-import { loadResources } from '../../actions/animesActions';
-
-import HeroImage from '../../components/heroImage/heroImage';
+import Loading from '../../components/loading/Loading';
 import AnimeCard from '../../components/animeCard/AnimeCard';
 import MangaCard from '../../components/mangaCard/MangaCard';
 import CharacterCard from '../../components/characterCard/CharacterCard';
-import Loading from '../../components/loading/Loading';
+import { getCharacters } from '../../redux/characters/middlewares';
 
 const Home = () => {
   const dispatch = useDispatch();
 
-  const { animes, mangas, characters } = useSelector((state) => state.animes);
+  const { animes } = useSelector((state) => state.animes);
+  const { mangas } = useSelector((state) => state.mangas);
+  const { characters } = useSelector((state) => state.characters);
+
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    dispatch(loadResources());
+    dispatch(getAnimes());
+    dispatch(getMangas());
+    dispatch(getCharacters());
     setLoading(false);
   }, []);
 
   return (
     <HomePage>
-      <HeroImage />
-
       <HomeSection>
         <HomeSectionTitle>Animes Top</HomeSectionTitle>
 

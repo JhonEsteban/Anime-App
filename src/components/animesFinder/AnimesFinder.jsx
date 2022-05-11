@@ -4,7 +4,7 @@ import useForm from '../../hooks/useForm';
 
 import { FormSearch, InputSearch, ButtonSearch } from './styles';
 
-import { getAnimesByQueryString } from '../../actions/animesActions';
+import { getAnimesByQueryString } from '../../redux/animes/middlewares';
 
 const AnimesFinder = () => {
   const dispatch = useDispatch();

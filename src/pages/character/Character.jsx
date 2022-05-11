@@ -2,10 +2,8 @@ import { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { useParams } from 'react-router-dom';
 
-import {
-  deleteSingleCharacter,
-  getCharacterById,
-} from '../../actions/animesActions';
+import { getCharacterById } from '../../redux/characters/middlewares';
+import { removeSingleCharacterAction } from '../../redux/characters/actions';
 
 import {
   CharacterPage,
@@ -21,7 +19,7 @@ const Character = ({ history }) => {
   const dispatch = useDispatch();
   const { characterId } = useParams();
 
-  const { character } = useSelector((state) => state.animes);
+  const { character } = useSelector((state) => state.characters);
   const { name, image_url: image, voice_actors: voices, about } = character;
 
   useEffect(() => {
@@ -29,7 +27,7 @@ const Character = ({ history }) => {
   }, [characterId]);
 
   const handleReturn = () => {
-    dispatch(deleteSingleCharacter());
+    dispatch(removeSingleCharacterAction());
     history.goBack();
   };
 

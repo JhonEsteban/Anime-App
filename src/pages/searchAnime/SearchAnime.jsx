@@ -1,4 +1,4 @@
-import { useDispatch, useSelector } from 'react-redux';
+import { useSelector } from 'react-redux';
 import { useEffect } from 'react';
 
 import {
@@ -9,7 +9,7 @@ import {
   ButtonReturn,
 } from './styles';
 
-import { clearAllFoundAnimes } from '../../actions/animesActions';
+// import { clearAllFoundAnimes } from '../../actions/animesActions';
 
 import useForm from '../../hooks/useForm';
 
@@ -21,7 +21,7 @@ const initialValues = {
 };
 
 const SearchAnime = ({ history }) => {
-  const dispatch = useDispatch();
+  // const dispatch = useDispatch();
 
   const { formValues, handleInputChange, resetForm } = useForm(initialValues);
   const { search } = formValues;
@@ -29,12 +29,12 @@ const SearchAnime = ({ history }) => {
   const { foundAnimes } = useSelector((state) => state.animes);
 
   const handleReturn = () => {
-    dispatch(clearAllFoundAnimes());
+    // dispatch(clearAllFoundAnimes());
     history.goBack();
   };
 
   useEffect(() => {
-    dispatch(clearAllFoundAnimes());
+    // dispatch(clearAllFoundAnimes());
   }, []);
 
   return (

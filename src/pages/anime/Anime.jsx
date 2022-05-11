@@ -13,7 +13,9 @@ import {
   Details,
 } from './styles';
 
-import { deleteSingleAnime, getAnimeById } from '../../actions/animesActions';
+import { getAnimeById } from '../../redux/animes/middlewares';
+import { removeSingleAnimeAction } from '../../redux/animes/actions';
+import { addToFavorite } from '../../redux/shared/favorites/middlewares';
 
 const Anime = ({ history }) => {
   const dispatch = useDispatch();
@@ -22,6 +24,7 @@ const Anime = ({ history }) => {
   const { anime } = useSelector((state) => state.animes);
 
   const {
+    mal_id: id,
     title,
     image_url: image,
     synopsis,
@@ -36,8 +39,12 @@ const Anime = ({ history }) => {
   }, [animeId]);
 
   const handleReturn = () => {
-    dispatch(deleteSingleAnime());
+    dispatch(removeSingleAnimeAction());
     history.goBack();
+  };
+
+  const handleAddToFavorites = () => {
+    dispatch(addToFavorite({ id, title, image }));
   };
 
   return (
@@ -67,6 +74,10 @@ const Anime = ({ history }) => {
             <strong>Duración: </strong>
             <span>{duration}</span>
           </p>
+
+          <button onClick={handleAddToFavorites} type='button'>
+            Añadir a favorito
+          </button>
         </Details>
 
         <AnimeData>

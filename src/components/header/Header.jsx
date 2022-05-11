@@ -10,8 +10,7 @@ import {
   ButtonLogo,
 } from './styles';
 
-import { closeUserSession } from '../../actions/authActions';
-import { deleteSingleResources } from '../../actions/animesActions';
+import { closeUserSession } from '../../redux/auth/middlewares';
 
 import logo from '../../assets/images/main-logo.jpg';
 
@@ -24,7 +23,6 @@ const Header = () => {
   };
 
   const handleReturn = () => {
-    dispatch(deleteSingleResources());
     history.goBack();
   };
 

@@ -1,14 +1,6 @@
-import { firebase, GoogleAuthProvider } from '../firebase';
-import types from '../types';
+import { firebase, GoogleAuthProvider } from '../../firebase';
 
-const loginUser = (uid, displayName) => ({
-  type: types.login,
-  payload: { uid, displayName },
-});
-
-const logoutUser = () => ({
-  type: types.logUp,
-});
+import { loginUser, logoutUser } from './actions';
 
 const registerUserWithEmailAndPassword = (name, email, password) => {
   return (dispatch) => {
@@ -56,7 +48,6 @@ const closeUserSession = () => {
 };
 
 export {
-  loginUser,
   registerUserWithEmailAndPassword,
   loginUserWithGoogleProvider,
   loginUserWithEmailAndPassword,

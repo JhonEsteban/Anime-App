@@ -6,7 +6,6 @@ const AnimeCard = ({ mal_id: id, title, image_url: image }) => {
   const history = useHistory();
 
   const handleAnime = () => {
-    console.log(title.trim());
     history.push(`/anime/${id}`);
   };
 
