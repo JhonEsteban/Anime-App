@@ -4,14 +4,14 @@ import { useForm } from 'react-hook-form';
 import { FcGoogle } from 'react-icons/fc';
 
 import Auth from './Auth';
-import MainLogo from '../../components/mainLogo/MainLogo';
+import MainLogo from '../../components/MainLogo';
 import Button from '../../assets/styles/ButtonStyles';
 
 import { LoginForm, Input } from './Styles';
 
 import {
   loginUserWithEmailAndPassword,
-  loginUserWithGoogleProvider
+  loginUserWithGoogleProvider,
 } from '../../redux/auth/middlewares';
 
 const btnProviderStyles = {

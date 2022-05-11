@@ -33,7 +33,7 @@ const HomeSectionTitle = styled.h2`
   }
 `;
 
-const HomeSectionContent = styled.div`
+const HomeSectionContent = styled.section`
   height: 450px;
   padding: 0 20px;
   margin: auto;

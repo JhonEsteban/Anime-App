@@ -1,14 +1,8 @@
-import { useDispatch } from 'react-redux';
-
 import useForm from '../../hooks/useForm';
 
 import { FormSearch, InputSearch, ButtonSearch } from './styles';
 
-import { getAnimesByQueryString } from '../../redux/animes/middlewares';
-
 const AnimesFinder = () => {
-  const dispatch = useDispatch();
-
   const { formValues, handleInputChange, resetForm } = useForm({ search: '' });
   const { search } = formValues;
 
@@ -21,7 +15,6 @@ const AnimesFinder = () => {
       return;
     }
 
-    dispatch(getAnimesByQueryString(search.trim()));
     resetForm();
   };
 

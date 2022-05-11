@@ -13,8 +13,8 @@ import {
 
 import useForm from '../../hooks/useForm';
 
-import AnimesFinder from '../../components/animesFinder/AnimesFinder';
-import AnimeCard from '../../components/animeCard/AnimeCard';
+import AnimesFinder from '../../components/AnimesFinder';
+import AnimeCard from '../../components/AnimeCard';
 
 const initialValues = {
   search: '',

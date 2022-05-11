@@ -15,8 +15,8 @@ import HomeRoutes from './HomeRoutes';
 import PublicRoute from './PublicRoute';
 import PrivateRoute from './PrivateRoute';
 
-import AppLoading from '../components/appLoading/AppLoading';
-import Layout from '../components/layout/Layout';
+import AppLoading from '../components/AppLoading';
+import Layout from '../components/Layout';
 
 const AppRouter = () => {
   const { hasSessionActive, loading } = useUserState();

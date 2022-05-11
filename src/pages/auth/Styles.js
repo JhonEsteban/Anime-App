@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 import fadeIn from '../../assets/styles/animations';
 
-const AuthSection = styled.section`
+const AuthSection = styled.main`
   min-height: 100vh;
   background-color: #000;
   text-align: center;
@@ -14,7 +14,7 @@ const AuthSection = styled.section`
   }
 `;
 
-const BannerContainer = styled.div`
+const BannerContainer = styled.section`
   opacity: 0.8;
 
   @media screen and (min-width: 720px) {
@@ -30,7 +30,7 @@ const Banner = styled.img`
   }
 `;
 
-const AuthContainer = styled.div`
+const AuthContainer = styled.section`
   padding: 0 15px 35px;
   ${fadeIn({ time: '2s' })}
 

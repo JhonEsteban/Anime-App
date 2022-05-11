@@ -3,6 +3,7 @@ import { useDispatch, useSelector } from 'react-redux';
 
 import { getAnimes } from '../../redux/animes/middlewares';
 import { getMangas } from '../../redux/mangas/middlewares';
+import { getCharacters } from '../../redux/characters/middlewares';
 
 import {
   HomePage,
@@ -11,11 +12,10 @@ import {
   HomeSectionContent,
 } from './styles';
 
-import Loading from '../../components/loading/Loading';
-import AnimeCard from '../../components/animeCard/AnimeCard';
-import MangaCard from '../../components/mangaCard/MangaCard';
-import CharacterCard from '../../components/characterCard/CharacterCard';
-import { getCharacters } from '../../redux/characters/middlewares';
+import Loading from '../../components/Loading';
+import AnimeCard from '../../components/AnimeCard';
+import MangaCard from '../../components/MangaCard';
+import CharacterCard from '../../components/CharacterCard';
 
 const Home = () => {
   const dispatch = useDispatch();

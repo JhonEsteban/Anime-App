@@ -3,7 +3,7 @@ import { useDispatch } from 'react-redux';
 import { useForm } from 'react-hook-form';
 
 import Auth from './Auth';
-import MainLogo from '../../components/mainLogo/MainLogo';
+import MainLogo from '../../components/MainLogo';
 import Button from '../../assets/styles/ButtonStyles';
 
 import { LoginForm, Input } from './Styles';
